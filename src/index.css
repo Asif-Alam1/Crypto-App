@@ -1,0 +1,117 @@
+/* Root variables */
+:root {
+	/* Define variables for common values */
+	--primary-color: #1a1a1a;
+	--secondary-color: #ffffff;
+	--positive-color: #00ff00;
+	--negative-color: #ff0000;
+	--neutral-color: #ffff00;
+	--base-font: Arial, Helvetica, sans-serif;
+	--base-font-size: 16px;
+}
+
+/* Reset default margins */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Typography styles */
+.Title {
+	font-family: var(--base-font);
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--secondary-color);
+	text-align: center;
+	background-color: var(--primary-color);
+	padding: 1rem;
+}
+
+.coin-input {
+	display: block;
+	width: 40%;
+	margin: 2rem auto;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	outline: none;
+}
+
+.coin h1 {
+	font-family: var(--base-font);
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-top: 0.5rem;
+}
+
+.coin p {
+	font-family: var(--base-font);
+	margin: 0.25rem 0;
+}
+
+.symbol {
+	text-transform: uppercase;
+}
+
+/* Flex container for coin rows */
+.coin-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1rem -1rem;
+}
+
+/* Styles for each coin */
+.coin {
+	flex: 0 0 calc(25% - 2rem);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: linear-gradient(
+		135deg,
+		var(--primary-color),
+		var(--primary-color)
+	);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.coin:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Coin image */
+.coin img {
+	width: 80px;
+	height: auto;
+}
+
+/* Price change percentage */
+.price-change {
+	font-weight: bold;
+}
+
+.red {
+	color: var(--negative-color);
+}
+
+.green {
+	color: var(--positive-color);
+}
+
+/* Market cap */
+.marketcap {
+	color: var(--secondary-color);
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+	.coin {
+		flex: 0 0 calc(50% - 2rem);
+	}
+}
